@@ -4,11 +4,8 @@ const router = express.Router();
 router.get("/", (req, res) => {
   res.setHeader("X-Timestamp", Date.now());
 
-  console.log(req.query);
   let message = req.query.message;
   const lang = req.headers["x-lang"];
-
-  console.log(message);
 
   if (message === "") {
     res.status(400);

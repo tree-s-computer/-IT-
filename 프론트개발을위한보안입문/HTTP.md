@@ -39,5 +39,5 @@ HTTPS 를 도입했다고 하더라도 사용하는 자바스크립트와 이미
 
 # HSTS
 
-해당 구조를 적용하면 사용자가 HTTPS 통신을 사용하도록 강제할 수 있다.HSTS를 유효화하려면 응답 헤더에 Strict-Transport-Security 를 추가한다.
+해당 구조를 적용하면 사용자가 HTTPS 통신을 사용하도록 강제할 수 있다. HSTS를 유효화하려면 응답 헤더에 Strict-Transport-Security 를 추가한다.
 브라우저는 Strict-Transport-Security 헤더를 받으면 이후의 웹 애플리케이션 요청은 HTTPS 를 사용한다.
