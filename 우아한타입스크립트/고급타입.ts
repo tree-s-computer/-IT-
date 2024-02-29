@@ -15,7 +15,7 @@ const bExample: Subset<Example> = { b: "hello" };
 const cExample: Subset<Example> = { a: 4, c: true, b: "hello" };
 
 // 맵드 타입 : readonly 속성
-type ReadOnlyEx = { readonly a: number; readonly b: string };
+type ReadOnlyEx = { readonly a: number; readonly b: string }; //102p
 
 type CreateMutable<Type> = {
   -readonly [Property in keyof Type]: Type[Property];
@@ -33,4 +33,24 @@ const arrowExampeFunction = <T>(arg: T): T[] => {
 // ### 에러발생 x
 const arrowExampeFunction2 = <T extends {}>(arg: T): T[] => {
   return new Array(3).fill(arg);
+};
+
+// 제네릭 예시
+
+export interface MobileApiResponse<Data> {
+  data: Data;
+  statusCode: string;
+  statusMessage: string;
+}
+
+export const fetchPriceInfo = (): Promise<MobileApiResponse<PriceInfo>> => {
+  const priceUrl = "url 주소 ";
+
+  return request({ method: "GET", url: priceUrl });
+};
+
+export const fetchOrderInfo = (): Promise<MobileApiResponse<Order>> => {
+  const orderUrl = "url 주소 ";
+
+  return request({ method: "GET", url: orderUrl });
 };
