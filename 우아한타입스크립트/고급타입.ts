@@ -22,3 +22,15 @@ type CreateMutable<Type> = {
 };
 
 type ResultType = CreateMutable<ReadOnlyEx>; // { a:number, b: string }
+
+//제네릭
+
+// ### 에러발생
+const arrowExampeFunction = <T>(arg: T): T[] => {
+  return new Array(3).fill(arg);
+};
+
+// ### 에러발생 x
+const arrowExampeFunction2 = <T extends {}>(arg: T): T[] => {
+  return new Array(3).fill(arg);
+};
