@@ -7,7 +7,12 @@
   </head>
   <body>
     <script nonce="<%= nonce %>">
-      alert("Hello ");
+      // alert("Hello ");
+      const script = document.createElement("script");
+      script.src = "/csp-test.js";
+      script.nonce = "<%= nonce %>"; // Add the nonce attribute
+
+      document.body.appendChild(script);
     </script>
   </body>
 </html>
