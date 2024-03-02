@@ -7,12 +7,29 @@
   </head>
   <body>
     <script nonce="<%= nonce %>">
-      // alert("Hello ");
-      const script = document.createElement("script");
-      script.src = "/csp-test.js";
-      script.nonce = "<%= nonce %>"; // Add the nonce attribute
+      if (window.trustedTypes && trustedTypes.createPolicy) {
+        //policy 함수 정의
+        const policy = trustedTypes.createPolicy("script-url", {
+          // script 요소의 src에 설정하는 url 체크
+          createScriptURL: (str) => {
+            // str의 URL 문자열에서 Orign 을 가져오기 위해 URL 객체 사용
+            const url = new URL(str, location.origin);
 
-      document.body.appendChild(script);
+            if (url.origin !== location.origin) {
+              // 교차 출처는 에러 발생
+              throw new Error("Cross-origin is not allowed.");
+            }
+
+            // 동일한 출처만 URL반환
+            return url;
+          },
+        });
+
+        const script = document.createElement("script");
+        script.src = policy.createScriptURL("./csp-test.js");
+
+        document.head.appendChild(script);
+      }
     </script>
   </body>
 </html>

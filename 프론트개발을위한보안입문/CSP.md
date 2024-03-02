@@ -30,3 +30,12 @@ hash-source를 사용하면 안전하게 CSP를 설정할 수 있다.
 
 script 요소를 동적으로 생성하고 싶을때는 strict-dynamic 키워드를 사용한다.
 그러나 DOM기반 XS싱크인 inerHTML과 document.write는기능이 제한된다.
+
+# Trusted Types
+
+_TrustedTypes 활성화하기_ : Content-Security-Policy: require-trusted-types-for 'script';
+
+검사되지 않은 문자열을 HTML 에 삽입하는 것을 금지하는 기능. 기본값이 비활성화 상태
+policy 함수로 검사된 안전한 타입만 HTML에 삽입할 수 있으므로 문자열을 그대로 반영하려고 하면 에러가 발생한다.
+
+브라우저가 Trusted Types 를 지원하지 않을 수 있으므로 함수 사용이 가능한지 체크를 해야한다. [ 158p ]
