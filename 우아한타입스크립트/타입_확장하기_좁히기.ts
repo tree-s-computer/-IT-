@@ -8,3 +8,5 @@ type Universal = IdType & Numeric;
 // 2. string 이면서 boolean 인 경우
 // 3. number 이면서 number 인 경우
 // 4. number 이면서 boolean 인 경우
+
+// 3번만 성립.
