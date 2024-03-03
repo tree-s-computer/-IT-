@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSRF 확인 페이지</title>
+  </head>
+  <body>
+    <form id="remit" action="/csrf/remit" method="post">
+      <div>
+        <label for="to">수신인</label>
+        <input type="text" name="to" id="to" required />
+      </div>
+      <div>
+        <label for="amount">금액</label>
+        <input type="text" name="amount" id="amount" required />
+      </div>
+      <div>
+        <button type="submit">송금 ₴</button>
+      </div>
+    </form>
+  </body>
+</html>
