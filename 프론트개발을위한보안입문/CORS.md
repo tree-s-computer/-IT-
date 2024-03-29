@@ -1,13 +1,13 @@
-# PreFliight Request
+# PreFlight Request
 
 fetch 등에 의해 임의로 HTTP 헤더가 추가 되거나 서버의 리소스를 변경하는 경우 요청은 안전하지 않다.
 이와 같은 요청을 전송할 때 사전에 브라우저와 서버 간에 합의가 이뤄진다.
 합의된 요청을 허가된 상태에서만 전송하는데 이 요청을 Prefilight Request 라고 한다.
 
-'지금부터 전송하려는 요청이 괜찮은지' 확인하기 위해 PreFliight Request를 전송한다.
+'지금부터 전송하려는 요청이 괜찮은지' 확인하기 위해 PreFlight Request를 전송한다.
 해당 Request 는 OPTIONS 메소드를 사용한다.
 
-### PreFliight Reqeust 에 의한 HTTP 메세지
+### PreFlight Reqeust 에 의한 HTTP 메세지
 
 OPTIONS / path HTTP / 1.1
 Host: https://cross-origin.example
