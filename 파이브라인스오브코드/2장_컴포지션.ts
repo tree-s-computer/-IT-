@@ -24,8 +24,4 @@ class PenguinComposite implements BirdComposite {
   canFly(): boolean {
     return false; // Penguin에 특화된 구현으로, 펭귄은 날 수 없음
   }
-
-  canSwim() {
-    return false;
-  }
 }
