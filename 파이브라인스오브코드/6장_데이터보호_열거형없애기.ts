@@ -29,3 +29,28 @@ function sizeToString2(s: TShirtSize2) {
 }
 
 console.log(sizeToString2(TShirtSize2.SMALL)); // Outputs: "S"
+
+/*
+6.5.1 타입 코드 값들을 대체하는 클래스
+
+*/
+
+interface SizeValue {}
+
+class SmallValue implements SizeValue {}
+
+class MediumValue implements SizeValue {}
+
+class LargeValue implements SizeValue {}
+
+class TShirtSize3 {
+  static readonly SMALL = new TShirtSize3(new SmallValue());
+  static readonly MEDIUM = new TShirtSize3(new MediumValue());
+  static readonly LARGE = new TShirtSize3(new LargeValue());
+
+  private constructor(private value: SizeValue) {}
+}
+
+/*
+이제 TShirtSize3에 무언가를 추가할 때마다 SizeValue를 구현한 모든 클래스에 코드를 추가해 if를 제거할 수 있다.
+*/
