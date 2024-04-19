@@ -23,3 +23,20 @@ function main() {
     console.log(counter);
   }
 }
+
+/* 변경전 코드
+ let counter = 0;
+
+function incrementCounter() {
+  counter++;
+}
+
+function main() {
+  for (let i = 0; i < 20; i++) {
+    incrementCounter();
+    console.log(counter);
+  }
+}
+
+main();  // Calling the
+ */
