@@ -20,14 +20,12 @@ class TShirtSize2 {
   static readonly LARGE = new TShirtSize2("L");
 
   private constructor(private sizeLabel: string) {}
-
-  public toString(): string {
-    return this.sizeLabel;
-  }
 }
 
-function sizeToString2(s: TShirtSize2): string {
-  return s.toString();
+function sizeToString2(s: TShirtSize2) {
+  if (s === TShirtSize2.SMALL) return "S";
+  else if (s === TShirtSize2.MEDIUM) return "M";
+  else if (s === TShirtSize2.LARGE) return "L";
 }
 
 console.log(sizeToString2(TShirtSize2.SMALL)); // Outputs: "S"
